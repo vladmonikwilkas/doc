@@ -396,19 +396,17 @@
                     "Какие techniques вы используете для maintaining resilience после prolonged conflicts?",
         ];
 
-        for (let i = 1; i <= 100; i++) {
+questions.forEach((q, index) => {
             const qDiv = document.createElement('div');
             qDiv.className = 'question';
             
-            const randomQ = questions[Math.floor(Math.random() * questions.length)];
-            
             qDiv.innerHTML = `
-                <label>Вопрос #${i}: ${randomQ}</label>
+                <label>Вопрос #${index + 1}: ${q}</label>
                 <input type="text" placeholder="Введите развернутый ответ...">
                 <div class="counter">Символов: 0 / 1000</div>
             `;
             container.appendChild(qDiv);
-        }
+        });
     </script>
 </body>
 </html>
